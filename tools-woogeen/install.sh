@@ -8,7 +8,7 @@ SOURCE="${ROOT}/src"
 TOOLS="${ROOT}/src/tools-woogeen"
 
 download_dir=${TOOLS}/tmp
-mkdir -p ${download_dir}
+# mkdir -p ${download_dir}
 
 download_third_party_module() {
     local repo=https://chromium.googlesource.com/chromium/src/third_party
@@ -18,7 +18,7 @@ download_third_party_module() {
     local download_name=$3
     local dst=$4
 
-    wget ${repo}/+archive/${commit}/${module_name}.tar.gz -O ${download_dir}/${download_name}.${commit}.tar.gz
+    # wget ${repo}/+archive/${commit}/${module_name}.tar.gz -O ${download_dir}/${download_name}.${commit}.tar.gz
     mkdir -p ${dst}
     tar -m -zxf ${download_dir}/${download_name}.${commit}.tar.gz -C ${dst}
 }
@@ -30,7 +30,7 @@ download_project() {
     local download_name=$4
     local dst=$5
 
-    wget ${repo}/+archive/${commit}.tar.gz -O ${download_dir}/${download_name}.${commit}.tar.gz
+    # wget ${repo}/+archive/${commit}.tar.gz -O ${download_dir}/${download_name}.${commit}.tar.gz
     mkdir -p ${dst}
     tar -m -zxf ${download_dir}/${download_name}.${commit}.tar.gz -C ${dst}
 }
